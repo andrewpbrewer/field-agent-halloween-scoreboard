@@ -1,0 +1,80 @@
+html {
+    font-family: 'Lato', sans-serif;
+    height: 100%;
+}
+
+body {
+    height: 100%;
+    margin: 0;
+}
+
+header {
+    text-align: center !important;
+}
+
+header img {
+    margin: 0 auto 0.25rem;
+    float: none;
+    display: block;
+}
+
+.v-application--wrap {
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background: #f59e42 !important;
+    background-image: linear-gradient(#ff8400de, #f3a148) !important;
+}
+
+.v-toolbar__title {
+    margin: 0 auto;
+}
+
+.cell {
+    width: 12%;
+    display: inline-block;
+    text-align: center;
+}
+
+.cell.team {
+    width: 18%;
+    text-align: left;
+    font-weight: 700;
+}
+
+.cell.rank{
+    width: 5%;
+    text-align: left;
+}
+
+.cell.status {
+    width: 3%;
+    font-size: 24px !important;
+    font-weight: bold;
+}
+
+.cell.rank-status {
+    width: 8%;
+}
+
+.table-headers .cell {
+    font-size: 20px;
+    font-weight: bold;
+    color: black;
+    margin-bottom: 3rem;
+    margin-top: 2rem;
+}
+
+.table-row {
+    border-bottom: 1px solid;
+    margin-bottom: 1.25rem;
+    padding-bottom: 1.25rem;
+}
+
+.table-row:last-child {
+    border-bottom: 0;
+}
+
+.table-row .cell {
+    font-size: 18px;
+    color: #333;
+}

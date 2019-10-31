@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title></title>
+
+    <!-- Vue CSS Files-->
+    <link href="https://cdn.jsdelivr.net/npm/@mdi/font@4.x/css/materialdesignicons.min.css" rel="stylesheet">
+
+    <!-- Styles-->
+    <link href="https://fonts.googleapis.com/css?family=Lato&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./css/style.css"></script>
+
+    <script defer src="https://use.fontawesome.com/releases/v5.1.0/js/all.js"></script>
+
+</head>
+
+<body>
+    <section id="scoreboard" class="section">
+        <v-app>
+            <v-app-bar app style="background-color: black; color: white; font-size: 16px;" height="72">
+                <v-toolbar-title><img src="./img/logo_admin.png"/> {{title}}</v-toolbar-title>
+            </v-app-bar>
+            
+        
+            <v-content>
+                <v-overlay
+                    :absolute="true"
+                    :value="overlay"
+                    style="text-align: center;"
+                  >
+                  <strong>Updating</strong>
+                  <br/>
+                  <v-progress-circular
+                    :width="5"
+                    :size="50"
+                    color="white"
+                    indeterminate
+                    ></v-progress-circular>
+                </v-overlay>
+                <v-container fluid>
+                    <v-row align="start" justify="center">
+                        <v-col cols="11">
+                            <v-card class="mx-auto mt-10">
+                                <v-card-text>
+                                    <div class="table-headers">
+                                        <span class="cell rank-status">Total</span>
+                                        <span class="cell team">Team</span>
+                                        <span class="cell costume">Costume Contest</span>
+                                        <span class="cell pumpkin">Pumpkin Toss</span>
+                                        <span class="cell guess">Guess How Many</span>
+                                        <span class="cell pin">Pin the Nose</span>
+                                        <span class="cell mummy">Mummy Wrap</span>
+                                    </div>
+                                    <div class="table-row" v-for="team in teams">
+                                        <span class="cell status">
+                                            {{team.rank}}
+                                            <!-- <v-icon medium class="trophy" v-bind:class="['trophy' + team.rank]">fa-trophy</v-icon> -->
+                                        </span>
+                                        <span class="cell rank">{{team.points}} pts</span>
+                                        <span class="cell team">{{team.name}}</span>
+                                        <span class="cell costume" transition="slide-x-transition">{{team.costume_score ? team.costume_score : '-'}}</span>
+                                        <span class="cell pumpkin">{{team.pumpkin_toss_score ? team.pumpkin_toss_score : '-'}}</span>
+                                        <span class="cell guess">{{team.guess_score ? team.guess_score : '-'}}</span>
+                                        <span class="cell pin">{{team.pin_the_nose_score ? team.pin_the_nose_score : '-'}}</span>
+                                        <span class="cell mummy">{{team.mummy_score ? team.mummy_score : '-'}}</span>
+                                    </div>
+                                </v-card-text>
+                            </v-card>
+                        </v-col>
+                    </v-row>
+                </v-container>
+            </v-content>
+        </v-app>
+    </section>
+
+    <!-- Scripts -->
+    <script src="./js/bundles/main.js"></script>
+</body>
+
+</html>
